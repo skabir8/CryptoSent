@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, session, redirect, url_for
 import os
 import hashlib
 import time
-import requests_oauth2
 
 
 

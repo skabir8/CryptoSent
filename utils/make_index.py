@@ -13,7 +13,7 @@ def make_index(tweets):
             d.setdefault(word,[])
             d[word].append(tweet)
     return d
-
+'''
 tweets = [
 'BTC is really good',
 'I dont really like btc',
@@ -21,3 +21,4 @@ tweets = [
 ]
 
 print(make_index(tweets))
+'''
