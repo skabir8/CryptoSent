@@ -26,6 +26,8 @@
         background-image: url('static/bg.jpg');
         background-size: cover;
       }
+      {% block style %}
+      {% endblock %}
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -50,19 +52,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Crypter</a>
+          <a class="navbar-brand" href="/">CRYPTER</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/BTC">BTC</a></li>
+            <li><a href="/ETH">ETH</a></li>
+            <li><a href="/BCH">BCH</a></li>
+            <li><a href="/XRP">XRP</a></li>
+            <li><a href="/LTC">LTC</a></li>
+            <li><a href="/IOT">IOT</a></li>
+            <li><a href="/DASH">DASH</a></li>
+            <li><a href="/XEM">XEM</a></li>
+            <li><a href="/ADA">ADA</a></li>
+            <li><a href="/BTG">BTG</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    {% block content %}
+    {% block body %}
 
     {% endblock %}
     <!-- Bootstrap core JavaScript
