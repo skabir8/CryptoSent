@@ -15,4 +15,4 @@ def get_tweets(coin_name):
 
 
 
-#get_tweets('btc')
+get_tweets('btc')

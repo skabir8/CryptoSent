@@ -21,6 +21,11 @@ def get_inv_match(want_list, or_list, not_list, i_index):
             ret_list.append(sent)
     return ret_list
 
+def get_match_condensed(sentence, i_index):
+    d = q_parse(sentence)
+    return get_inv_match(d['and'],d['or'],d['not'], i_index)
+
+
 def get_inv_and(want_list, i_index):
     counter = 0
     hold = []
@@ -103,6 +108,10 @@ def not_match(q_list, sent):
         return []
 
 
+exindex = {'love': ['I love btc hey chicken', 'I love btc hey chicken lol'], 'i': ['I love btc hey chicken', 'I love btc hey chicken lol'], 'hey': ['I love btc hey chicken', 'I love btc hey chicken lol'], 'lol': ['I love btc hey chicken lol'], 'btc': ['I love btc hey chicken', 'I love btc hey chicken lol'], 'chicken': ['I love btc hey chicken', 'I love btc hey chicken lol']}
 
-#ex = q_parse("btc and chicken or hey not lol and pie or knicks")
+q = "btc and chicken or hey not lol and pie or knicks"
+ex = q_parse("btc and chicken or hey not lol and pie or knicks")
+#print(ex)
 #print(get_match(ex['and'],ex['or'],ex['not'],["I love btc hey chicken","I love btc hey chicken lol"]))
+#print get_match_condensed(q, exindex)
