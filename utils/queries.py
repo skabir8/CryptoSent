@@ -7,7 +7,9 @@ def q_parse(sentence):
     while (i < len(s_split)):
         if (s_split[i] in ['and','or','not'] and i != len(s_split)):
             ret_dic[s_split[i]].append(s_split[i+1])
+
         i += 1
+
     return ret_dic
 
 
@@ -20,7 +22,7 @@ def get_match(want_list, or_list, no_list, all_data):
       for sent1 in nos:
           if (sent1 in ands or sent1 in ors):
               ret_list.append(sent1)
-    return ret_list
+  return ret_list
 
 
 def and_match(q_list, sent):
@@ -58,14 +60,6 @@ def not_match(q_list, sent):
     else:
         return []
 
-
-
-
-
-
-
-
-
 def get_and(word1, word2, data):
     ret_list = []
     for sent in data:
@@ -89,4 +83,8 @@ def get_not(get_word, not_word, data):
     return ret_list
 
 
-print(q_parse("btc and chicken or hey not lol and pie or knicks"))
+
+
+
+#ex = q_parse("btc and chicken or hey not lol and pie or knicks")
+#print(get_match(ex['and'],ex['or'],ex['not'],["I love btc hey chicken","I love btc hey chicken lol"]))
