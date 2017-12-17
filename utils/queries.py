@@ -11,6 +11,59 @@ def q_parse(sentence):
     return ret_dic
 
 
+def get_match(want_list, or_list, no_list, all_data):
+  ret_list = []
+  for sent in all_data:
+      ands = and_match(want_list, sent)
+      ors = or_match(or_list, sent)
+      nos = not_match(no_list, sent)
+      for sent1 in nos:
+          if (sent1 in ands or sent1 in ors):
+              ret_list.append(sent1)
+    return ret_list
+
+
+def and_match(q_list, sent):
+    counter = 0
+    word_hold = []
+    s_split = sent.split()
+    for word in q_list:
+        if word in s_split:
+            counter += 1
+    if ( counter == len(q_list)):
+        word_hold.append(sent)
+        return word_hold
+    else:
+        return []
+
+def or_match(q_list, sent):
+    word_hold = []
+    s_split = sent.split()
+    for word in q_list:
+        if word in s_split:
+            word_hold.append(sent)
+            return word_hold
+    return word_hold
+
+def not_match(q_list, sent):
+    counter = 0
+    word_hold = []
+    s_split = sent.split()
+    for word in q_list:
+        if word not in s_split:
+            counter += 1
+    if ( counter == len(q_list)):
+        word_hold.append(sent)
+        return word_hold
+    else:
+        return []
+
+
+
+
+
+
+
 
 
 def get_and(word1, word2, data):
