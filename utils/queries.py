@@ -7,10 +7,52 @@ def q_parse(sentence):
     while (i < len(s_split)):
         if (s_split[i] in ['and','or','not'] and i != len(s_split)):
             ret_dic[s_split[i]].append(s_split[i+1])
-
         i += 1
-
     return ret_dic
+
+def get_inv_match(want_list, or_list, not_list, i_index):
+    ands = get_inv_and(want_list,i_index)
+    ors = get_inv_or(or_list, i_index)
+    nots = get_inv_not(not_list, i_index)
+    ret_list = []
+    comb_list = ands + ors
+    for sent in comb_list:
+        if (sent not in nots):
+            ret_list.append(sent)
+    return ret_list
+
+def get_inv_and(want_list, i_index):
+    counter = 0
+    hold = []
+    for x in want_list:
+        if (x in i_index):
+            counter += 1
+            hold.extend(i_index[x])
+    if (counter == len(want_list)):
+        return hold
+    else:
+        return []
+
+def get_inv_or(or_list, i_index):
+    hold = []
+    for x in or_list:
+        if (x in i_index):
+            hold.extend(i_index[x])
+    return hold
+
+def get_inv_not(not_list, i_index):
+    counter = 0
+    hold = []
+    for x in not_list:
+        if (x in i_index):
+            counter += 1
+            hold.extend(i_index[x])
+    if (counter == len(not_list)):
+        return hold
+    else:
+        return []
+
+
 
 
 def get_match(want_list, or_list, no_list, all_data):
@@ -59,30 +101,6 @@ def not_match(q_list, sent):
         return word_hold
     else:
         return []
-
-def get_and(word1, word2, data):
-    ret_list = []
-    for sent in data:
-        if (word1 in sent and word2 in sent):
-            ret_list.append(sent)
-    return ret_list
-
-
-def get_or(word1, word2, data):
-    ret_list = []
-    for sent in data:
-        if (word1 in sent or word2 in sent):
-            ret_list.append(sent)
-    return ret_list
-
-def get_not(get_word, not_word, data):
-    ret_list = []
-    for sent in data:
-        if (get_word in sent and not_word not in sent):
-            ret_list.append(sent)
-    return ret_list
-
-
 
 
 
