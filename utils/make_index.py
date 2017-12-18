@@ -10,7 +10,6 @@ def index_maker(tweets):
             else:
                 cleantext = cleantext + " "
         wordlist = cleantext.split()
-        print(wordlist)
         for word in wordlist:
             d.setdefault(word,[])
             d[word].append(tweet)
@@ -18,12 +17,12 @@ def index_maker(tweets):
 
 def make_index(coin):
     tweets = get_tweets(coin)
+    #for tweet in tweets:
+#        print tweet
+#        print ""
+#        print "jordan"
+#        print ""
     ind = index_maker(tweets)
-    file = open('tweets.txt','w' )
-    file.write(str(ind))
-    #print(tweets)
-    #file.write(str(tweets))
-    file.close()
     return ind
     #return tweets
 
@@ -33,7 +32,9 @@ tweets = [
 'I dont really like btc',
 'BTC gets me so hard'
 ]
-
-print(index_maker(tweets))
 '''
+
+#print(make_index('btc')['up'])
+
 #print(index_maker(["I love btc hey chicken","I love btc hey chicken lol"]))
+#print(make_index('btc')['time'])

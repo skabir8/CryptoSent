@@ -1,4 +1,4 @@
-
+from make_index import make_index
 
 def q_parse(sentence):
     s_split = sentence.split()
@@ -24,6 +24,10 @@ def get_inv_match(want_list, or_list, not_list, i_index):
 def get_match_condensed(sentence, i_index):
     d = q_parse(sentence)
     return get_inv_match(d['and'],d['or'],d['not'], i_index)
+
+def get_queried_tweets(coin, sentence):
+    i_index = make_index(coin)
+    return get_match_condensed(sentence,i_index)
 
 
 def get_inv_and(want_list, i_index):
@@ -114,4 +118,5 @@ q = "btc and chicken or hey not lol and pie or knicks"
 ex = q_parse("btc and chicken or hey not lol and pie or knicks")
 #print(ex)
 #print(get_match(ex['and'],ex['or'],ex['not'],["I love btc hey chicken","I love btc hey chicken lol"]))
-#print get_match_condensed(q, exindex)
+#get_match_condensed(q, exindex)
+#print(get_queried_tweets('btc', 'up'))

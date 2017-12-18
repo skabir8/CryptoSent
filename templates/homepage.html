@@ -2,43 +2,50 @@
 {% block body %}
 
 <div class="container">
-
   <center>
-    <h1><font color="white"> Select the coin you would like to research: </font></h1>
-    <br>
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="BTC"> BTC
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="ETH"> ETH
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="BCH"> BCH
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="XRP"> XRP
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="LTC"> LTC
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="IOT"> IOT
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="DASH"> DASH
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="XEM"> XEM
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="ADA"> ADA
-      </label>
-      <label class="btn btn-primary btn-lg">
-        <input type="radio" name="coin" value="BTG"> BTG
-      </label>
-    </div>
-  </center>
+    <form action="/mainform" method="post">
+      <div class="form-group">
+        <h1><font color="white"> Select the coin you would like to research: </font></h1>
+        <br>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="BTC"> BTC
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="ETH"> ETH
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="BCH"> BCH
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="XRP"> XRP
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="LTC"> LTC
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="IOT"> IOT
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="DASH"> DASH
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="XEM"> XEM
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="ADA"> ADA
+            </label>
+            <label class="btn btn-primary btn-lg">
+              <input type="radio" name="coin" value="BTG"> BTG
+            </label>
+          </div>
+          <br><br><br><br>
+          <input style="width:70%" name="query" class="form-control form-control-lg" type="text" placeholder="Enter search query">
+
+          <br>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
+</center>
 </div>
 
 {% endblock %}

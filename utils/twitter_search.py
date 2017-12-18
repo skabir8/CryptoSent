@@ -12,7 +12,3 @@ def get_tweets(coin_name):
         print(sent.text.encode('ascii', errors='ignore'))
         ret_list.append(sent.text)
     return ret_list
-
-
-
-get_tweets('btc')
