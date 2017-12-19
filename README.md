@@ -9,8 +9,8 @@ To run this really cool website
  <pre><code>
 
 1. Create a virtual environment
-2. pip install flask
-3. pip install python-twitter
+2. pip3 install flask
+3. pip3 install python-twitter
 4. Go to http://127.0.0.1:8000
 5. Clicking any of top menu items will lead to general information about the price
 6. To use the website, click on the name of the cryptocoin on the blue header
