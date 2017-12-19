@@ -11,10 +11,11 @@ To run this really cool website
 1. Create a virtual environment
 2. pip3 install flask
 3. pip3 install python-twitter
-4. Go to http://127.0.0.1:8000
-5. Clicking any of top menu items will lead to general information about the price
-6. To use the website, click on the name of the cryptocoin on the blue header
-7. Then, type in your query such as "wallet NOT fall"
+4. python3 app.py
+5. Go to http://127.0.0.1:8000
+6. Clicking any of top menu items will lead to general information about the price
+7. To use the website, click on the name of the cryptocoin on the blue header
+9. Then, type in your query such as "wallet NOT fall"
 </code></pre>
 
 Scrape social media websites (currently just twitter) for peoples' conversations related to a specific cryptocurrency. The users tweets will be used to create an inverted index, which can be searched by the user. We also would like to implement a feature to generate sentences very similar in sentiment to that of the majority of the sentences. This will act as a sort of tl;dr (too long; didn't read) if the user does not want to go through the inverted index.
