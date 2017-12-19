@@ -6,6 +6,33 @@
 <br><br>
 
 <center>
+  {% if data != "no" %}
+  <div style="width:70%">
+  <table class="table table-sm table-dark" style="background-color:black">
+  <thead>
+    <tr>
+      <th scope="col">Tweet</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if data %}
+  {% for x in data%}
+
+  <tr>
+      <td><font color="white">{{ x }}</font></td>
+
+</tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+  <td><font color="white">No results found.</font></td>
+  <tr>
+  {% endif %}
+</tbody>
+</table>
+</div>
+{% endif %}
+<br><br>
   <div class="container" style="width:90%">
     <div class="row">
       <div class="col-sm-6">
