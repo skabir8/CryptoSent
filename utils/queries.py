@@ -1,4 +1,4 @@
-from make_index import make_index
+from utils.make_index import make_index
 
 def q_parse(sentence):
     s_split = sentence.split()

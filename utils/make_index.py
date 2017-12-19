@@ -1,4 +1,4 @@
-from twitter_search import get_tweets
+from utils.twitter_search import get_tweets
 
 def index_maker(tweets):
     d={}
